@@ -69,15 +69,19 @@ let companyExist = itCompanies.indexOf("Apple");
 
 // Filter out companies which have more than one 'o' without the filter method
 const itCompanyNames = ["Facebook", "Google", "Microsoft", "Apple", "IBM", "Oracle", "Amazon"];
-let newCompnayName = Array();
-let splitedValues = [];
+const newCompanyName = [];
 
-for (let i = 0; i < itCompanyNames.length - 1; i++) {
-    splitedValues.push(itCompanyNames[i].split(""));
-    splitedValues.map((items) => {
-        console.log(items)
-        // items.map((compName) => {
-        //     console.log(compName);
-        // })
-    })
+for (let i = 0; i < itCompanyNames.length; i++) {
+    const newData = itCompanyNames[i];
+    let count = 0;
+    for (let j = 0; j < newData.length; j++) {
+        if (newData[j].toLowerCase() === "o") {
+            count++;
+        }
+    }
+    if (count > 1) {
+        newCompanyName.push(newData);
+    }
 }
+
+console.log(newCompanyName);
