@@ -14,6 +14,47 @@ console.log(word.length)
 const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey']
 
 // add 'Meat' in the beginning of your shopping cart if it has not been already added
-const addedItemonStart = shoppingCart.unshift(1, 2);
+shoppingCart.unshift("Meat");
+console.log(shoppingCart);
 
-console.log(addedItemonStart);
+// add Sugar at the end of you shopping cart if it has not been already added
+shoppingCart.push("Sugar");
+console.log(shoppingCart);
+
+// remove 'Honey' if you are allergic to honey
+// for (let i = 0; i < shoppingCart.length; i++) {
+//     if (shoppingCart[i] === "Honey") {
+//         shoppingCart.splice(i, 1);
+//     }
+// }
+
+// or 
+let i = 0;
+while (i < shoppingCart.length) {
+    if (shoppingCart[i] === "Honey") {
+        shoppingCart.splice(i, 1);
+    } else {
+        i++;
+    }
+}
+console.log(shoppingCart);
+
+// modify Tea to 'Green Tea'
+for (let i = 0; i < shoppingCart.length; i++) {
+    if (shoppingCart[i] === "Tea") {
+        shoppingCart[i] = "Green Tea";
+    }
+}
+console.log(shoppingCart);
+
+// In countries array check if 'Ethiopia' exists in the array if it exists print 'ETHIOPIA'. If it does not exist add to the countries list.
+for (let i = 0; i < countryList.length; i++) {
+    if (countryList.indexOf("Ethiopia") != -1) {
+        console.log("ETHIOPIA");
+        break;
+    } else {
+        countryList.push("Ethiopia");
+        console.log(countryList);
+        break;
+    }
+}

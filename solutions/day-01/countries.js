@@ -10,7 +10,8 @@ const countryList =
         "Argentina",
         "Armenia",
         "Australia",
-        "Austria"
+        "Austria",
+        "Ethiopia"
     ];
 
 export default countryList;
