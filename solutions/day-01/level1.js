@@ -69,19 +69,50 @@ let companyExist = itCompanies.indexOf("Apple");
 
 // Filter out companies which have more than one 'o' without the filter method
 const itCompanyNames = ["Facebook", "Google", "Microsoft", "Apple", "IBM", "Oracle", "Amazon"];
-const newCompanyName = [];
+const companyNamesWithO = [];
 
 for (let i = 0; i < itCompanyNames.length; i++) {
-    const newData = itCompanyNames[i];
+    const checkO = itCompanyNames[i];
     let count = 0;
-    for (let j = 0; j < newData.length; j++) {
-        if (newData[j].toLowerCase() === "o") {
+    for (let j = 0; j < checkO.length; j++) {
+        if (checkO[j].toLowerCase() === "o") {
             count++;
         }
-    }
-    if (count > 1) {
-        newCompanyName.push(newData);
+    } if (count > 1) {
+        companyNamesWithO.push(checkO);
     }
 }
 
-console.log(newCompanyName);
+console.log("Company Name with O: ", companyNamesWithO);
+
+// Sort the array using sort() method
+const compName = ["Facebook", "Google", "Microsoft", "Apple", "IBM", "Oracle", "Amazon"];
+console.log(compName.sort());
+
+// Reverse the array using reverse() method
+console.log(compName.reverse());
+
+// Slice out the first 3 companies from the array
+const compNames = ["Facebook", "Google", "Microsoft", "Apple", "IBM", "Oracle", "Amazon"];
+const firtThree = compNames.slice(0, 3);
+console.log(firtThree);
+
+// Slice out the last 3 companies from the array
+console.log(compNames.slice(-3));
+
+// Slice out the middle IT company or companies from the array
+const middleItCompnany = compNames.slice((compNames.length / 2), (compNames.length / 2) + 1);
+console.log(middleItCompnany);
+
+// Remove the first IT company from the array
+console.log(compNames.splice(0, 1));
+
+// Remove the middle IT company or companies from the array
+const compItNames = ["Facebook", "Google", "Microsoft", "Apple", "IBM", "Oracle", "Amazon"];
+console.log(compItNames.splice(((compItNames.length / 2) - 1), 1));
+
+// Remove the last IT company from the array
+console.log(compItNames.splice((compItNames.length - 1)));
+
+// Remove all IT companies
+console.log(compItNames.splice());
