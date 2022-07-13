@@ -39,6 +39,6 @@ const updatedCountryList = countryList.slice(0, 10);
 console.log(updatedCountryList);
 
 // Find the middle country(ies) in the countries array
-const middleArrayItem = countryList;
+const middleArrayItem = Math.floor(countryList.length / 2);
 
-console.log(middleArrayItem.length);
+console.log(countryList[middleArrayItem]);
