@@ -39,6 +39,25 @@ const updatedCountryList = countryList.slice(0, 10);
 console.log(updatedCountryList);
 
 // Find the middle country(ies) in the countries array
-const middleArrayItem = countryList;
+const middleArrayItem = Math.floor(countryList.length / 2);
 
-console.log(middleArrayItem.length);
+console.log(countryList[middleArrayItem]);
+
+// Divide the countries array into two equal arrays if it is even. If countries array is not even , one more country for the first half.
+let firstHalft = [];
+let secondHalf = [];
+
+for (let i = 0; i < countryList.length; i++) {
+    if (((Math.floor(countryList.length / 2)) % 2) === 0) {
+        firstHalft = countryList.slice(0, Math.floor(countryList.length / 2));
+        secondHalf = (countryList.slice(Math.floor(countryList.length / 2), countryList.length));
+        console.log(firstHalft);
+        console.log(secondHalf);
+        break;
+    } else {
+        firstHalft = countryList.slice(0, Math.floor(countryList.length / 2));
+        firstHalft.push("India");
+        console.log(firstHalft);
+        break;
+    }
+}
