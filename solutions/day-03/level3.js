@@ -34,3 +34,23 @@ function generateColors(colorType, number) {
 }
 
 console.log(generateColors("", 10));
+
+// Call your function shuffleArray, it takes an array as a parameter and it returns a shuffled array
+// Shuffled the array using Fisher–Yates shuffle
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+console.log(shuffleArray([1, 2, 3, 4]));
+
+// Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
+
+function factorial(number) {
+    return number / 1;
+}
+
+console.log(factorial(2));
