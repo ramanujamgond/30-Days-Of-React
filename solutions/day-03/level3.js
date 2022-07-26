@@ -48,9 +48,31 @@ function shuffleArray(array) {
 console.log(shuffleArray([1, 2, 3, 4]));
 
 // Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
+// (Not Solved)
 
-function factorial(number) {
-    return number / 1;
+// Call your function isEmpty, it takes a parameter and it checks if it is empty or not
+
+function isEmpty(value) {
+    if (value === null) {
+        console.log("The inputed Value is empty");
+    } else {
+        console.log("The inputed value is not empty");
+    }
 }
 
-console.log(factorial(2));
+isEmpty("2");
+
+// Write a function called average, it takes an array parameter and returns the average of the items. Check if all the array items are number types. If not give return reasonable feedback.
+function averageOfArray(value) {
+    let total = 0;
+    for (let i = 0; i < value.length; i++) {
+        if (typeof value[i] === 'number') {
+            total += value[i];
+        } else {
+            console.log("Enter a valid integer array number");
+        }
+    }
+    return console.log(total / value.length);
+}
+
+averageOfArray([1, 2, 3, 4, 5, 6]);
