@@ -97,13 +97,51 @@ console.log(itemLists);
 // Declare a function name removeItem. It takes an index parameter and it returns an array after removing an item
 
 const itemToRemove = [76, 45, 12, 90, 1, 21, 35, 15];
-let updatedRemovedArray = [];
 
 function removeItem(index) {
-    console.log(itemToRemove.slice(index, 1));
-    // return updatedRemovedArray;
+    itemToRemove.splice(index, 1);
+    return itemToRemove;
 }
 
-console.log(removeItem(2));
+console.log(removeItem(6));
 
-console.log(updatedRemovedArray);
+// Declare a function name evensAndOdds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
+
+let even = 0;
+let odd = 0;
+
+function evensAndOdds(numberRange) {
+    let i = 0;
+    while (i <= numberRange) {
+        if (i % 2 === 0) {
+            even++;
+        } else {
+            odd++;
+        }
+        i++;
+    }
+}
+
+evensAndOdds(100);
+console.log("The number of odds are ", odd);
+console.log("The number of evens are ", even);
+
+// Write a function which takes any number of arguments and return the sum of the arguments
+let count = 0;
+function sum(...addNumbers) {
+    for (let i = 0; i < addNumbers.length; i++) {
+        count += addNumbers[i];
+    }
+    return count;
+}
+
+console.log("The sum of inputed numbers are: ", sum(1, 2, 3, 4, 5, 6, 7, 8));
+
+
+// Declare a function name userIdGenerator. When this function is called it generates seven character id. The function return the id.
+
+function userIdGenerator() {
+    console.log(Math.random().toString(33).slice(2, 9));
+}
+
+userIdGenerator();
