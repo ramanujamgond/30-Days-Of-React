@@ -22,7 +22,15 @@ const person = {
 
 
 function getPersonInfo(person) {
-    console.log(person.firstName + " " + person.lastName + " " + "lives in " + person.country + " He is " + person.age + " years old.He is an " + person.job + ". He teaches " + person.skills[0] + ", " + person.skills[1] + ", " + person.skills[2] + ", " + person.skills[3] + ", " + person.skills[4] + ", " + person.skills[5] + ", " + person.skills[6] + ", " + person.skills[7] + " and " + person.skills[8] + ".He speaks " + person.languages[0] + "," + person.languages[1] + " and a little bit of Suomi");
+    console.log(person.firstName + " " + person.lastName + " " + "lives in " + person.country + " He is " + person.age + " years old. He is an " + person.job + ". He teaches " + person.skills[0] + ", " + person.skills[1] + ", " + person.skills[2] + ", " + person.skills[3] + ", " + person.skills[4] + ", " + person.skills[5] + ", " + person.skills[6] + ", " + person.skills[7] + " and " + person.skills[8] + ".He speaks " + person.languages[0] + "," + person.languages[1] + " and a little bit of Suomi");
 }
 
 getPersonInfo(person);
+
+
+function getPersonInfoObjectDesct(person) {
+    const { firstName, lastName, country, age, job, skills: [skill1, skill2, skill3, skill4, skill5, skill6, skill7, skill8], languages: [lang1, lang2, lang3] } = person;
+    console.log("\n", firstName, lastName, "lives in", country, ". He is", age, "years old. He is an", job, ". He teaches", skill1, skill2, skill3, skill4, skill5, skill6, skill7, "and", skill8, ". He speaks", lang1, lang2, "and a little bit of", lang3);
+}
+
+getPersonInfoObjectDesct(person);
