@@ -78,3 +78,83 @@ const mamal = new Mamal("Tilu", 20, "Green", 4);
 
 console.log(mamal);
 console.log(mamal.getAnimalName());
+
+// Let's try to develop a program which calculate measure of central tendency of a sample(mean, median, mode) and measure of variability(range, variance, standard deviation). In addition to those measures find the min, max, count, percentile, and frequency distribution of the sample. You can create a class called Statistics and create all the functions which do statistical calculations as method for the Statistics class. Check the output below.
+
+ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26];
+
+class Statistics {
+    constructor(ages) {
+        this.ages = ages;
+    }
+
+    countTheItems() {
+        return console.log(`Count: ${this.ages.length}`)
+    }
+
+    sumTheItems() {
+        let sum = 0;
+        for (let i = 0; i < this.ages.length; i++) {
+            sum += ages[i];
+        }
+        return console.log(`Sum: ${sum}`);
+    }
+
+    minFromArray() {
+        let min = this.ages[0];
+        for (let i = 0; i < this.ages.length; i++) {
+            if (this.ages[i] < min) {
+                min = this.ages[i];
+            }
+        }
+        return console.log(`Min: ${min}`);
+    }
+
+    maxFromArray() {
+        let max = this.ages[0];
+        for (let i = 0; i < this.ages.length; i++) {
+            if (this.ages[i] > max) {
+                max = this.ages[i];
+            }
+        }
+        return console.log(`Max: ${max}`);
+    }
+
+    rangeOfArray() {
+        let min = this.ages[0];
+        let max = this.ages[0];
+        for (let i = 0; i < this.ages.length; i++) {
+            if (this.ages[i] < min) {
+                min = this.ages[i];
+            }
+
+            if (this.ages[i] > max) {
+                max = this.ages[i];
+            }
+        }
+
+        return console.log(`Range: ${max - min}`);
+    }
+
+    meanOfArray() {
+        let total = 0;
+        for (let i = 0; i < this.ages.length; i++) {
+            total += ages[i];
+        }
+        return console.log(`Mean: ${Math.floor(total / ages.length)}`)
+    }
+
+    describe() {
+        this.countTheItems();
+        this.sumTheItems();
+        this.minFromArray();
+        this.maxFromArray();
+        this.rangeOfArray();
+        this.meanOfArray();
+        return 0;
+    }
+}
+
+const statistics = new Statistics(ages);
+
+console.log(statistics.describe());
